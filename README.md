@@ -1,4 +1,4 @@
-# Contexto del proyecto y el por qué de su elección
+# Contexto del proyecto y Algoritmo
 
 A causa de la pandemia muchos de los hospitales en el mundo se tuvieron que 
 interrumpir parcialmente sus servicios a pacientes con enfermedades no 
@@ -28,4 +28,5 @@ que podría padecer y algunas de las posibles soluciones para regular su
 enfermedad hasta que tenga la posibilidad de asistir a un hospital con un 
 especialista
 
-
+Algoritmo del proyecto:
+https://docs.google.com/document/d/1jNQ6l2-Rl9zQFp-bxAU7KWXDXTVdj2KOw1BMSyUm5Wc/edit?usp=sharing
