@@ -28,32 +28,4 @@ que podría padecer y algunas de las posibles soluciones para regular su
 enfermedad hasta que tenga la posibilidad de asistir a un hospital con un 
 especialista
 
-#Algoritmo del Proyecto
 
-Entradas:
-   o Edad (float(input))
-   o Oxigenación float(input))
-   o Temperatura float(input))
-   o Estatura float(input))
-   o Presión float(input))
-   o Peso float(input))
-   o Síntomas input
-   o Enfermedades pasadas input
-Proceso:
-   o Pedir Edad 
-   o Pedir Oxigenación
-   o Pedir Temperatura
-   o Pedir Estatura
-   o Pedir Presión
-   o Pedir Peso
-   o Síntomas input
-   o Enfermedades pasadas input
-   o Realizar condicionales que nos ayuden a ir descartando las posibles 
-      enfermedades, hasta llegar a la más próxima.
-   o Imprimir Diagnóstico
-       ▪ En este caso imprimirá la enfermedad que tiene el paciente 
-         junto con una breve explicación de en qué consiste y algún 
-         pequeño tratamiento de cómo puede controlar su enfermedad 
-         hasta conseguir cita con un médico especializado.
-Salidas:
-   o Diagnóstico
