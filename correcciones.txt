@@ -1,0 +1,131 @@
+Sub - Competencia:
+  Separa el código en funciones pequeñas reusables, haciendo uso correcto de paso por parametros y return (avance 3)
+  
+Error Original:
+
+  No poner todo el código en funciones con parámetros, no crear una función main() que ayuda al funcionamiento del código.
+  
+    import math
+
+    #ARRIBA DE TODO VA A HABER UN WHILE PARA QUE SE REPITA EL CÓDIGO DE FORMA INFINITA HASTA QUE EL USUARIO CIERRE SESIÓN
+    #Bienvenida
+    print("\n")
+    print("============================================================")
+    print("¡Bienvenidos! Me llamo Asis y seré tu asistente médico")
+    print("============================================================")
+    print("\n")
+    print("Antes de poder hacerte una conclusión de la posible enfermedad que tengas")
+    print("Necesitamos que pongas algunos datos:")
+
+    # Entradas
+    nombre = input("¿Cuál es tu nombre? ")
+    edad = int(input("Por favor introduce tu Edad: "))
+    oxigenacion = float(input("Por favor introduce tu Oxigenacion: "))
+    temperatura = float(input("Por favor introduce tu Temperatura: "))
+    estatura = float(input("Por favor introduce tu Estatura (Metros, usa decimales porfa :D): "))
+    presion = float(input("Por favor introduce tu Presión: "))
+    peso = float(input("Por favor introduce tu Peso (Kg): "))
+
+    #Aquí va a haber una lista con todos los posibles sintomas y vas a tener que ir selaccionando de acuerdo a los que aparezcan. Tambien con enfermedades pasadas
+    #Aquí van a if las condiconales para ir descartando enfermedades
+    #Aquí van a ir los resultados:
+
+    print("\n")
+    print("============================================================")
+    print("Resultados del Diagnóstico")
+    print("============================================================ \n")
+
+    peso_ideal = peso/(math.pow(estatura, 2))
+    frecuencia_cardiaca = 220 - edad
+    FC60 = (frecuencia_cardiaca) * 0.6
+    FC60 = round(FC60, 2)
+    FC70 = (frecuencia_cardiaca) * 0.7
+    FC70 = round(FC70, 2)
+
+    #aquí va a ir el numero de peso ideal y tambien si está bien, pero para eso necesito condicionales
+    peso_ideal2 = "ta bueno"
+
+
+    print("Tu peso ideal es de: %.2f  " % (peso_ideal))
+    print("Eso quiere decir que su peso es: ", peso_ideal2)
+    print("Tu Frecuencia Cardiaca es de ", frecuencia_cardiaca)
+    print("Tu Frecuencia en los porcentajes de 60% sería: ", FC60, "y en el porcentaje de 70% sería: ", FC70)
+    corre = "si"
+    while corre == "si":
+    
+
+
+Cambio realizado:
+
+  Cree la función main() y puse todo el código en funciones dejando solo afuera el import math. el while se ubica en el main().
+  
+  def main():
+
+    Archivo_Base_datos = "Base_de_datos.txt"
+
+    file = open(Archivo_Base_datos, "a+")
+    file.write("\n")
+    file.write("============================================================")
+    file.write("\n")
+    file.write("                  BASE DE DATOS - ASIS")
+    file.write("\n")
+    file.write("============================================================")
+    file.close()
+
+    corre = "si"
+    base_datos = []
+    paciente = []
+    while corre == "si":
+
+        print("\n")
+        print("============================================================")
+        print("¡Bienvenidos! Me llamo Asis y seré tu asistente médico")
+        print("============================================================")
+        print("\n")
+        print("Antes de poder hacerte una conclusión de la posible enfermedad que tengas")
+        print("Necesitamos que pongas algunos datos:")
+
+            # Entradas
+        nombre = input("¿Cuál es tu nombre? ")
+        edad = int(input("Por favor introduce tu Edad: "))
+        oxigenacion = float(input("Por favor introduce tu Oxigenacion: "))
+        temperatura = float(input("Por favor introduce tu Temperatura: "))
+        estatura = float(input("Por favor introduce tu Estatura (Metros, usa decimales porfa :D): "))
+        presion = float(input("Por favor introduce tu Presión: "))
+        peso = float(input("Por favor introduce tu Peso (Kg): "))
+        tos_flema = input("¿Tienes tos con flemas? (si/no) ")
+        dolores_musculares = input("¿Tienes dolores musculares? (si/no) ")
+        doloresCabeza = input("¿Tienes dolores de cabeza? (si/no): ")
+        infeccion_urinaria = input("¿Sientes ardor al orinar? ")
+        dolor_oido = input("¿Sientes dolor en el oido? ")
+        dormir = input("¿Tienes transtornos del sueño (no puedes dormir bien, insomnio, etc)? ")
+        oir_bien = input("¿Puedes oír bien? ")
+        dolor = input("¿Te sientes mas sensible al dolor físico? ")
+        ojos = input("¿Ves bien? ")
+
+
+        peso_ideal = peso / (math.pow(estatura, 2))
+        frecuencia_cardiaca = 220 - edad
+        FC60 = (frecuencia_cardiaca) * 0.6
+        FC60 = round(FC60, 2)
+        paciente_FC60 = "Tu frecuencia cardiaca en 60% es: ", FC60
+        paciente.insert(4, paciente_FC60)
+
+        FC70 = (frecuencia_cardiaca) * 0.7
+        FC70 = round(FC70, 2)
+        paciente_FC70 = "Tu frecuencia cardiaca en 70% es: ", FC70
+        paciente.insert(3, paciente_FC70)
+
+        paciente_nombre = "El nombre del paciente es: ", nombre
+        paciente.insert(0, paciente_nombre)
+        paciente_edad = "La edad del paciente es: ", edad
+        paciente.insert(1, paciente_edad)
+
+        resultados(nombre, edad, peso_ideal, oxigenacion, estatura, temperatura, presion, doloresCabeza, infeccion_urinaria, dolor_oido, dormir, oir_bien, dolor, ojos, frecuencia_cardiaca, dolores_musculares, FC60, FC70, tos_flema, paciente, base_datos, Archivo_Base_datos)
+
+        corre = input("Ya hemos terminado con tu consulta :D ¿Te gustaría seguir probando este Asistente? (si/no): ")
+        if corre == "si":
+            print("\n=======================================================================================================================")
+        paciente = []
+
+
